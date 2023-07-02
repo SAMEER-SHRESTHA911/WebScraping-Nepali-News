@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 
 News_headlines = []
 
-# Triggering all 30 pages
-for i in range(1, 30):
+# Triggering all 60 pages
+for i in range(1, 60):
     url = "https://aarthiknews.com/category/Non-life%20Insurance/?page=" + str(i)
     request = requests.get(url)
     print(request)
