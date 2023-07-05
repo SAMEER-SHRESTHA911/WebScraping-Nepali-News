@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 
 News_headlines = []
 
-# Triggering all 30 pages
-for i in range(1, 30):
+# Triggering all 60 pages
+for i in range(1, 60):
     url = "https://aarthiknews.com/category/Auto/?page=" + str(i)
     request = requests.get(url)
     print(request)
@@ -24,7 +24,7 @@ for i in range(1, 30):
     print(len(News_headlines))
 
 # Specify the CSV file path
-csv_file_path = "./MajorProject/News_Headline_Trade_Auto.csv"
+csv_file_path = "News_Headline_Trade_Auto.csv"
 
 # Open the CSV file with proper encoding
 with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
@@ -39,4 +39,4 @@ with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
 df = pd.DataFrame({"Headline": News_headlines})
 
 # Convert the DataFrame into a CSV file with proper encoding
-df.to_csv("./MajorProject/News_Headline_Trade_Auto.csv", encoding='utf-8-sig', index_label="Index")
+df.to_csv("News_Headline_Trade_Auto.csv", encoding='utf-8-sig', index_label="Index")

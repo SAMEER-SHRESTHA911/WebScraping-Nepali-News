@@ -24,7 +24,7 @@ for i in range(1, 30):
     print(len(News_headlines))
 
 # Specify the CSV file path
-csv_file_path = "./MajorProject/News_Headline_Trade_Employment.csv"
+csv_file_path = "News_Headline_Trade_Employment.csv"
 
 # Open the CSV file with proper encoding
 with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
@@ -39,4 +39,4 @@ with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
 df = pd.DataFrame({"Headline": News_headlines})
 
 # Convert the DataFrame into a CSV file with proper encoding
-df.to_csv("./MajorProject/News_Headline_Trade_Employment.csv", encoding='utf-8-sig', index_label="Index")
+df.to_csv("News_Headline_Trade_Employment.csv", encoding='utf-8-sig', index_label="Index")

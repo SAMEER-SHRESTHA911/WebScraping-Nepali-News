@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 News_headlines = []
 
 # Triggering all 20 pages
-for i in range(1, 20):
+for i in range(1, 22):
     url = "https://aarthiknews.com/category/Right/?page=" + str(i)
     request = requests.get(url)
     print(request)
@@ -24,10 +24,10 @@ for i in range(1, 20):
     print(len(News_headlines))
 
 # Specify the CSV file path
-csv_file_path = "./MajorProject/News_Headline_ShareMarket_RightShare.csv"
+csv_file_path = "News_Headline_ShareMarket_RightShare.csv"
 
 # Open the CSV file with proper encoding
-with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
+with codecs.open(csv_file_path, 'a', encoding='utf-8-sig') as file:
     writer = csv.writer(file)
 
     # Write the headlines to the CSV file
@@ -35,8 +35,9 @@ with codecs.open(csv_file_path, 'w', encoding='utf-8-sig') as file:
     for index, headline in enumerate(News_headlines, start=1):
         writer.writerow([index, headline])
 
-# Use pandas DataFrame to create a proper tabular view
+
+#Use pandas DataFrame to create a proper tabular view
 df = pd.DataFrame({"Headline": News_headlines})
 
 # Convert the DataFrame into a CSV file with proper encoding
-df.to_csv("./MajorProject/News_Headline_ShareMarket_RightShare.csv", encoding='utf-8-sig', index_label="Index")
+df.to_csv("News_Headline_Insurance_NonLife.csv", encoding='utf-8-sig', index_label="Index")
